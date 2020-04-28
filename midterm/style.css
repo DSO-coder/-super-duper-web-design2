@@ -1,12 +1,15 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: black;
-    color: rgb(252, 4, 4);
+    color: grey;
     line-height: 1.6;
     height: 100vh;
     overflow: hidden;
@@ -32,30 +35,98 @@ background: rgba(0,0,0,0.7);
 
 }
 
+.logo{
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 60px;
+    /* CSS Smoth Scroll */
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
 .navbar ul{
     display: flex;
+    float: right;
     list-style: none;
     width: 100%;
-    justify-content: center;
+    justify-content: right;
+    margin-right: 20px;
 
 }
 
 .navbar ul li {
+    display: inline-block;
     margin: 0 1rem;
     padding: 1rem;
+    
 }
 
 .navbar ul li a {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-
+    
 }
 
-.navbar ul li a:hover {
+a.active,a:hover{
     color: skyblue;
+    transition: .5s;
 }
 
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+ }
+
+ #check{
+    display: none;
+}
+ @media (max-width: 952px){
+    .logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    .navbar ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #424344;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .navbar ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .navbar ul li a{
+        font-size: 20px;
+    }
+    a:hover,a.active{
+        background: none;
+        color: gray;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
 section {
     display: flex;
     flex-direction: column;
@@ -65,31 +136,66 @@ section {
     width: 100%;
     height: 100vh;
     scroll-snap-align: center;
+   
 }
 
 section h1{
-    font-size: 4rem;
+    font-size: 156px;
+    text-shadow: 10px 10px 4px rgba(0,0,0,0.4);
+    color: white;
 }
 
 section p{
     font-size: 1.5rem;
+    color: white;
+    background: rgba(0,0,0,0.7);
 }
 
 /* sections Images */
 
 section#home {
     background: url('https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-1.2.1&auto=format&fit=crop&w=2671&q=80') no-repeat center center/ cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
 }
 
 section#about {
     background: url('https://images.unsplash.com/photo-1572457143356-30d0a20f49f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=2102&q=80') no-repeat center center/ cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
 }
 
 section#service {
-    background: url('') no-repeat center center/ cover;
+    background: url('https://images.unsplash.com/photo-1506629371177-38dbb6e04a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80') no-repeat center center/ cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
 }
 
 section#contact {
     background: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80') no-repeat center center/ cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
 }
+
+
 
